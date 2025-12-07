@@ -43,7 +43,7 @@ if(isset($_SESSION['email'])){
 </head>
 <body class="login-page">
 
-<div class="login-box">
+<div class="login-box"> 
   <?php 
   if(isset($_POST['login'])){
     extract($_POST);
