@@ -1,3 +1,10 @@
+<?php include_once("includes/db_config.php"); 
+session_start();
+
+if(!isset($_SESSION['email'])){
+  header("Location: index.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -139,7 +146,7 @@
               <li role="separator" class="divider"></li>
               <li><a href="#"><i class="icon-gears"></i> Account Setting</a></li>
               <li role="separator" class="divider"></li>
-              <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
+              <li><a href="logout.php"><i class="fa fa-power-off"></i> Logout</a></li>
             </ul>
           </li>
           <!-- Control Sidebar Toggle Button -->
