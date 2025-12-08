@@ -1,4 +1,4 @@
 <?php 
-    $conn = new mysqli("localhost", "root", "", "hr_soft");
+    $conn = new mysqli("localhost", "root", "", "hr_management");
 
 ?>

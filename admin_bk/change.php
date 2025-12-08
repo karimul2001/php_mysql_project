@@ -1,1 +1,0 @@
-currentRow.find('input[name^="rate"]').val(rate);

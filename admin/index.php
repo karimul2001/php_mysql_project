@@ -48,7 +48,7 @@ if(isset($_SESSION['email'])){
   if(isset($_POST['login'])){
     extract($_POST);
     $password = md5($password);
-    $sql = "SELECT * FROM admin WHERE email = '$email' AND password = '$password'";
+    $sql = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
     $rawData = $conn->query($sql);
     $row = $rawData->fetch_object();
     if($rawData->num_rows){
