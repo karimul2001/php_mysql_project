@@ -17,7 +17,7 @@
             
           </ul>
         </li>
-        <li class="treeview"> <a href="#"> <i class="icon-grid"></i> <span>Apps</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+        <li class="treeview"> <a href="#"> <i class="icon-grid"></i> <span>Department</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
           <ul class="treeview-menu">
             <li><a href="apps-calendar.php"><i class="fa fa-angle-right"></i> Calendar</a></li>
             
@@ -26,7 +26,7 @@
             <li><a href="apps-contact-details.html"><i class="fa fa-angle-right"></i> Contact Detail</a></li>
           </ul>
         </li>
-        <li class="treeview"> <a href="#"> <i class="ti-email"></i> <span>Inbox</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+        <li class="treeview"> <a href="#"> <i class="ti-email"></i> <span>Notification</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
           <ul class="treeview-menu">
             <li><a href="apps-mailbox.html"><i class="fa fa-angle-right"></i> Mailbox</a></li>
             <li><a href="apps-mailbox-detail.html"><i class="fa fa-angle-right"></i> Mailbox Detail</a></li>
@@ -47,7 +47,7 @@
         <li class="treeview"> <a href="#"> <i class="icon-note"></i> <span>Forms</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
           <ul class="treeview-menu">
             <li><a href="form-elements.html"><i class="fa fa-angle-right"></i> Form Elements</a></li>
-            <li><a href="form-validation.html"><i class="fa fa-angle-right"></i> Form Validation</a></li>
+            <li><a href="form-validation.php"><i class="fa fa-angle-right"></i> Form Validation</a></li>
             <li><a href="form-wizard.html"><i class="fa fa-angle-right"></i> Form Wizard</a></li>
             <li><a href="form-layouts.html"><i class="fa fa-angle-right"></i> Form Layouts</a></li>
             <li><a href="form-uploads.html"><i class="fa fa-angle-right"></i> Form File Upload</a></li>

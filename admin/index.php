@@ -9,7 +9,7 @@ if(isset($_SESSION['email'])){
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Biz Admin - Multipurpose bootstrap 4 admin templates</title>
+<title>hr_management System</title>
 <!-- Tell the browser to be responsive to screen width -->
 
 <meta name="viewport" content="width=device-width, initial-scale=1">

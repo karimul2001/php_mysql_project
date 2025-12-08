@@ -10,7 +10,7 @@ if(!isset($_SESSION['email'])){
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Biz Admin - Multipurpose bootstrap 4 admin templates</title>
+<title>hr_management System</title>
 <!-- Tell the browser to be responsive to screen width -->
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -68,7 +68,7 @@ if(!isset($_SESSION['email'])){
             <div class="card-body">
               <div class="row">
                 <div class="col-md-6 text-white">
-                  <p>Total Balance</p>
+                  <p>Total Employee</p>
                   <h2 class="font-weight-bold">$15,859</h2>
                   <a href="#">View Statement</a> </div>
                 <div class="col-md-6 m-t-2 text-right"> <span id="spa-bar"></span> </div>
