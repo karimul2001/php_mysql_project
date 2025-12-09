@@ -12,7 +12,7 @@
       <!-- sidebar menu -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">PERSONAL</li>
-        <li class="active treeview"> <a href="dashboard.php"> <i class="icon-home"></i> <span>Dashboard</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+        <li> <a href="dashboard.php"> <i class="icon-home"></i> <span>Dashboard</span> <span class="pull-right-container"> </span> </a>
           <ul class="treeview-menu">
             
           </ul>
@@ -21,7 +21,7 @@
           <ul class="treeview-menu">
             <li><a href="department_entry.php"><i class="fa fa-angle-right"></i> Department Entry</a></li>
             
-            <li><a href="apps-contacts.php"><i class="fa fa-angle-right"></i> Contact / Employee</a></li>
+            <li><a href="department_list.php"><i class="fa fa-angle-right"></i>Department List</a></li>
             <li><a href="apps-contact-grid.html"><i class="fa fa-angle-right"></i> Contact  Grid</a></li>
             <li><a href="apps-contact-details.html"><i class="fa fa-angle-right"></i> Contact Detail</a></li>
           </ul>
