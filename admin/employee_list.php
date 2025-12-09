@@ -117,7 +117,7 @@ if(!isset($_SESSION['email'])){
                 <td><?php echo $raw['join_date']; ?></td>
                 <td><?php echo $raw['salary']; ?></td>
                 <td><?php echo $raw['address']; ?></td>
-                <td><a href=""><input type="button" value="Edit" class="btn btn-outline-info"></a></td>
+                <td><a href="employee_edit.php?id=<?php echo $raw['employee_id']; ?>"><input type="button" value="Edit" class="btn btn-outline-info"></a></td>
                 <td><a onclick="return confirm('Are you sure delete')" href="employee_delete.php?id=<?php echo $raw['employee_id']; ?>"><input type="button" value="Delete" class="btn btn-outline-danger"></a></td>
                 
               </tr>

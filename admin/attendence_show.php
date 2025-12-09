@@ -17,7 +17,7 @@ if(!isset($_SESSION['email'])){
 <meta name="description" content="Biz Admin is a Multipurpose bootstrap 4 Based Dashboard & Admin Site Responsive Template by uxliner." />
 <meta name="keywords" content="admin, admin dashboard, admin template, cms, crm, Biz Admin, Biz Adminadmin, premium admin templates, responsive admin, sass, panel, software, ui, visualization, web app, application" />
 <meta name="author" content="uxliner"/>
-<!-- v4.0.0 -->
+<!-- v4.1.3 -->
 <link rel="stylesheet" href="dist/bootstrap/css/bootstrap.min.css">
 
 <!-- Favicon -->
@@ -34,10 +34,6 @@ if(!isset($_SESSION['email'])){
 <link rel="stylesheet" href="dist/css/simple-lineicon/simple-line-icons.css">
 <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
 
-<!-- jsgrid Tables -->
-<link type="text/css" rel="stylesheet" href="dist/plugins/jsgrid/jsgrid.css" />
-<link type="text/css" rel="stylesheet" href="dist/plugins/jsgrid/theme.css" />
-
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -45,13 +41,12 @@ if(!isset($_SESSION['email'])){
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 <style>
-  table, th, td{
+  table, th, td {
     border: 2px solid black;
     border-collapse: collapse;
-    height: 40px;
-    width: 600px;
+    height: 45px;
   }
-  th, td{
+  th, td {
     text-align: center;
   }
 </style>
@@ -67,37 +62,59 @@ if(!isset($_SESSION['email'])){
   <div class="content-wrapper"> 
     <!-- Content Header (Page header) -->
     <div class="content-header sty-one">
-      <h1>All Department</h1>
+      <h1 class="text-center">Attendance Information</h1>
       <ol class="breadcrumb">
         <li><a href="#">Home</a></li>
         <li><i class="fa fa-angle-right"></i> <a href="#">Tables</a></li>
-        <li><i class="fa fa-angle-right"></i>Department</li>
+        <li><i class="fa fa-angle-right"></i> Basic Tables</li>
       </ol>
     </div>
     
     <!-- Main content -->
     <div class="content">
+      <div class="card">
+      <div class="card-body">
+        <h4 class="text-black text-dark">Employee Attendance Record</h4>
+        
+        <div class="table-responsive">
+          <table>
+    <thead>
+      <tr>
+        <th scope="col">Attendance ID</th>
+        <th scope="col">Employee ID</th>
+        <th scope="col">Date</th>
+        <th scope="col">Check In</th>
+        <th scope="col">Check Out</th>
+        <th scope="col">Working Hours</th>
+      </tr>
+    </thead>
+
     <?php
-      $sql = "SELECT * FROM departments";
-      $rawData = $conn->query($sql);  
+      $sql = "SELECT * FROM attendance ORDER BY date DESC";
+      $rawData = $conn->query($sql);
     ?>
 
-    <table>
+    <tbody>
+      <?php while ($raw = $rawData->fetch_assoc()){ ?>
       <tr>
-        <th>Department Id</th>
-        <th>Department Name</th>
-        <th colspan="2">Action</th>
+        <td><?php echo $raw['attendance_id']; ?></td>
+        <td><?php echo $raw['employee_id']; ?></td>
+        <td><?php echo $raw['date']; ?></td>
+        <td><?php echo $raw['check_in']; ?></td>
+        <td><?php echo $raw['check_out']; ?></td>
+        <td><?php echo $raw['working_hours']; ?></td>
       </tr>
-      <?php while($raw = $rawData->fetch_assoc()): ?>
-      <tr>
-        <td><?php echo $raw['department_id']; ?></td>
-        <td><?php echo $raw['department_name']; ?></td>
-        <td><a href=""><input type="button" value="Edit" class="btn btn-outline-info"></a></td>
-        <td><a onclick="return confirm('Are you sure delete')" href=""><input type="button" value="Delete" class="btn btn-outline-danger"></a></td>
-      </tr>
-      <?php endwhile; ?>
-    </table><br>
-    <a href="department_entry.php"><input type="button" value="Add Department" class="btn btn-info"></a>
+      <?php } ?>
+    </tbody>
+    </table>
+        </div>
+        
+        <hr class="m-t-1 m-b-3">
+        <a href="attendence_entry.php"><input type="button" value="Add Attendence" class="btn btn-outline-primary"></a>
+        
+        
+       
+      </div></div>
     </div>
     <!-- /.content --> 
   </div>
@@ -123,8 +140,7 @@ if(!isset($_SESSION['email'])){
 <!-- ./wrapper --> 
 
 <!-- jQuery 3 --> 
-<script src="dist/js/jquery.min.js"></script> 
-<script src="dist/plugins/popper/popper.min.js"></script>  
+<script src="dist/js/jquery.min.js"></script>  
 <script src="dist/bootstrap/js/bootstrap.min.js"></script> 
 
 <!-- template --> 
@@ -133,10 +149,6 @@ if(!isset($_SESSION['email'])){
 <!-- for demo purposes --> 
 <script src="dist/js/demo.js"></script> 
 
-<!-- jsgrid Tables --> 
-<script src="dist/plugins/jsgrid/db.js"></script> 
-<script src="dist/plugins/jsgrid/jsgrid.min.js"></script> 
-<script src="dist/plugins/jsgrid/jsgrid.int.js"></script>
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();

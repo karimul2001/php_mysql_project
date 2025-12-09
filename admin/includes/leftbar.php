@@ -45,10 +45,10 @@
             <li><a href="table-jsgrid.html"><i class="fa fa-angle-right"></i> Js Grid Table</a></li>
           </ul>
         </li>
-        <li class="treeview"> <a href="#"> <i class="icon-layers"></i> <span>Widgets</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+        <li class="treeview"> <a href="#"> <i class="icon-layers"></i> <span>Attendence</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
           <ul class="treeview-menu">
-            <li><a href="widget-data.html"><i class="fa fa-angle-right"></i> Data Widgets</a></li>
-            <li><a href="widget-apps.html"><i class="fa fa-angle-right"></i> Apps Widgets</a></li>
+            <li><a href="attendence_entry.php"><i class="fa fa-angle-right"></i> Attendence Entry</a></li>
+            <li><a href="attendence_show.php"><i class="fa fa-angle-right"></i> Show Attendence</a></li>
           </ul>
         </li>
         

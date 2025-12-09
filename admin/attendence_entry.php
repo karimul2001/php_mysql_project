@@ -17,7 +17,7 @@ if(!isset($_SESSION['email'])){
 <meta name="description" content="Biz Admin is a Multipurpose bootstrap 4 Based Dashboard & Admin Site Responsive Template by uxliner." />
 <meta name="keywords" content="admin, admin dashboard, admin template, cms, crm, Biz Admin, Biz Adminadmin, premium admin templates, responsive admin, sass, panel, software, ui, visualization, web app, application" />
 <meta name="author" content="uxliner"/>
-<!-- v4.0.0 -->
+<!-- v4.1.3 -->
 <link rel="stylesheet" href="dist/bootstrap/css/bootstrap.min.css">
 
 <!-- Favicon -->
@@ -34,27 +34,12 @@ if(!isset($_SESSION['email'])){
 <link rel="stylesheet" href="dist/css/simple-lineicon/simple-line-icons.css">
 <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
 
-<!-- jsgrid Tables -->
-<link type="text/css" rel="stylesheet" href="dist/plugins/jsgrid/jsgrid.css" />
-<link type="text/css" rel="stylesheet" href="dist/plugins/jsgrid/theme.css" />
-
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
-<style>
-  table, th, td{
-    border: 2px solid black;
-    border-collapse: collapse;
-    height: 40px;
-    width: 600px;
-  }
-  th, td{
-    text-align: center;
-  }
-</style>
 
 </head>
 <body class="skin-blue sidebar-mini">
@@ -66,45 +51,100 @@ if(!isset($_SESSION['email'])){
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper"> 
     <!-- Content Header (Page header) -->
-    <div class="content-header sty-one">
-      <h1>All Department</h1>
+    <div class="content-header sty-two">
+      <h1 class="text-white text-center">Employee Entry</h1>
       <ol class="breadcrumb">
         <li><a href="#">Home</a></li>
-        <li><i class="fa fa-angle-right"></i> <a href="#">Tables</a></li>
-        <li><i class="fa fa-angle-right"></i>Department</li>
+        <li><i class="fa fa-angle-right"></i> <a href="#">Form</a></li>
+        <li><i class="fa fa-angle-right"></i> Employee Entry</li>
       </ol>
     </div>
     
     <!-- Main content -->
     <div class="content">
-    <?php
-      $sql = "SELECT * FROM departments";
-      $rawData = $conn->query($sql);  
-    ?>
+      <div class="card">
+        <div class="card-body">
+          <?php
+            // Insert Attendance
+            if(isset($_POST['submit'])){
+            $employee_id = $_POST['employee_id'];
+            $date = $_POST['date'];
+            $check_in = $_POST['check_in'];
+            $check_out = $_POST['check_out'];
 
-    <table>
-      <tr>
-        <th>Department Id</th>
-        <th>Department Name</th>
-        <th colspan="2">Action</th>
-      </tr>
-      <?php while($raw = $rawData->fetch_assoc()): ?>
-      <tr>
-        <td><?php echo $raw['department_id']; ?></td>
-        <td><?php echo $raw['department_name']; ?></td>
-        <td><a href=""><input type="button" value="Edit" class="btn btn-outline-info"></a></td>
-        <td><a onclick="return confirm('Are you sure delete')" href=""><input type="button" value="Delete" class="btn btn-outline-danger"></a></td>
-      </tr>
-      <?php endwhile; ?>
-    </table><br>
-    <a href="department_entry.php"><input type="button" value="Add Department" class="btn btn-info"></a>
+            // Calculate working hours
+            $start = strtotime($check_in);
+            $end = strtotime($check_out);
+            $diff = $end - $start;
+
+            $working_hours = gmdate("H:i", $diff);
+
+            $sql = "INSERT INTO attendance (employee_id, date, check_in, check_out, working_hours)
+            VALUES ('$employee_id', '$date', '$check_in', '$check_out', '$working_hours')";
+
+            if($conn->query($sql)){
+            $msg = "<div class='alert alert-success'>Attendance successfully added</div>";
+            } else {
+            $msg = "<div class='alert alert-danger'>Error: " . $conn->error . "</div>";
+            }
+            }
+         ?>
+          <div class="container mt-4">
+    <h2 class="text-center">Attendance Entry</h2>
+
+    <?php if(!empty($msg)) echo $msg; ?>
+
+    <form method="post">
+
+        <div class="form-group">
+            <label>Employee</label>
+            <select name="employee_id" class="form-control" required>
+                <option value="">Select Employee</option>
+                <?php
+                $employees = $conn->query("SELECT employee_id, first_name, last_name FROM employees");
+                while($e = $employees->fetch_assoc()){
+                ?>
+                    <option value="<?php echo $e['employee_id']; ?>">
+                        <?php echo $e['first_name'] . " " . $e['last_name']; ?>
+                    </option>
+                <?php } ?>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Date</label>
+            <input type="date" name="date" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label>Check In</label>
+            <input type="time" name="check_in" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label>Check Out</label>
+            <input type="time" name="check_out" class="form-control" required>
+        </div>
+
+        <input type="submit" name="submit" class="btn btn-success" value="Save Attendance">
+        <a href="attendence_show.php" class="btn btn-info">Show Attendance List</a>
+
+    </form>
+</div>
+
+          
+          
+        </div>
+      </div>
+      
+      
+      <!-- Main row --> 
     </div>
     <!-- /.content --> 
   </div>
   <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <div class="pull-right hidden-xs">Version 1.0</div>
-    Copyright © 2018 Yourdomian. All rights reserved.</footer>
+   <!-- Footer -->
+  <?php include_once("includes/footer.php"); ?>
   
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark"> 
@@ -123,20 +163,14 @@ if(!isset($_SESSION['email'])){
 <!-- ./wrapper --> 
 
 <!-- jQuery 3 --> 
-<script src="dist/js/jquery.min.js"></script> 
-<script src="dist/plugins/popper/popper.min.js"></script>  
+<script src="dist/js/jquery.min.js"></script>  
 <script src="dist/bootstrap/js/bootstrap.min.js"></script> 
 
 <!-- template --> 
 <script src="dist/js/bizadmin.js"></script> 
 
 <!-- for demo purposes --> 
-<script src="dist/js/demo.js"></script> 
-
-<!-- jsgrid Tables --> 
-<script src="dist/plugins/jsgrid/db.js"></script> 
-<script src="dist/plugins/jsgrid/jsgrid.min.js"></script> 
-<script src="dist/plugins/jsgrid/jsgrid.int.js"></script>
+<script src="dist/js/demo.js"></script>
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
