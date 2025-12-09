@@ -12,14 +12,14 @@
       <!-- sidebar menu -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">PERSONAL</li>
-        <li class="active treeview"> <a href="#"> <i class="icon-home"></i> <span>Dashboard</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+        <li class="active treeview"> <a href="dashboard.php"> <i class="icon-home"></i> <span>Dashboard</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
           <ul class="treeview-menu">
             
           </ul>
         </li>
         <li class="treeview"> <a href="#"> <i class="icon-grid"></i> <span>Department</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
           <ul class="treeview-menu">
-            <li><a href="apps-calendar.php"><i class="fa fa-angle-right"></i> Calendar</a></li>
+            <li><a href="department_entry.php"><i class="fa fa-angle-right"></i> Department Entry</a></li>
             
             <li><a href="apps-contacts.php"><i class="fa fa-angle-right"></i> Contact / Employee</a></li>
             <li><a href="apps-contact-grid.html"><i class="fa fa-angle-right"></i> Contact  Grid</a></li>
@@ -43,10 +43,10 @@
             <li><a href="ui-carousel.html"><i class="fa fa-angle-right"></i> Carousel</a></li>
           </ul>
         </li>
-        <li class="header">FORMS, TABLE & WIDGETS</li>
+        
         <li class="treeview"> <a href="#"> <i class="icon-note"></i> <span>Forms</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
           <ul class="treeview-menu">
-            <li><a href="form-elements.html"><i class="fa fa-angle-right"></i> Form Elements</a></li>
+            <li><a href="employee_entry.php"><i class="fa fa-angle-right"></i> Employee Entry</a></li>
             <li><a href="form-validation.php"><i class="fa fa-angle-right"></i> Form Validation</a></li>
             <li><a href="form-wizard.html"><i class="fa fa-angle-right"></i> Form Wizard</a></li>
             <li><a href="form-layouts.html"><i class="fa fa-angle-right"></i> Form Layouts</a></li>
@@ -56,7 +56,7 @@
         </li>
         <li class="treeview"> <a href="#"> <i class="fa fa-table"></i> <span>Tables</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
           <ul class="treeview-menu">
-            <li><a href="table-basic.html"><i class="fa fa-angle-right"></i> Basic Tables</a></li>
+            <li><a href="employee_list.php"><i class="fa fa-angle-right"></i> Employee List</a></li>
             <li><a href="table-layout.html"><i class="fa fa-angle-right"></i> Table Layouts</a></li>
             <li><a href="table-data-table.html"><i class="fa fa-angle-right"></i> Data Tables</a></li>
             <li><a href="table-jsgrid.html"><i class="fa fa-angle-right"></i> Js Grid Table</a></li>
@@ -68,14 +68,13 @@
             <li><a href="widget-apps.html"><i class="fa fa-angle-right"></i> Apps Widgets</a></li>
           </ul>
         </li>
-        <li class="header">EXTRA COMPONENTS</li>
+        
         <li class="treeview"> <a href="#"><i class="icon-chart"></i> <span>Charts</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
           <ul class="treeview-menu">
             <li><a href="chart-morris.html"><i class="fa fa-angle-right"></i> Morris Chart</a></li>
             <li><a href="chart-chartist.html"><i class="fa fa-angle-right"></i> Chartis Chart</a></li>
             <li><a href="chart-knob.html"><i class="fa fa-angle-right"></i> Knob Chart</a></li>
-            <li><a href="chart-chart-js.html"><i class="fa fa-angle-right"></i> Chartjs</a></li>
-            <li><a href="chart-peity.html"><i class="fa fa-angle-right"></i> Peity Chart</a></li>
+
           </ul>
         </li>
         <li class="treeview"> <a href="#"> <i class="icon-docs"></i> <span>Sample Pages</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
@@ -91,13 +90,7 @@
                 <li><a href="pages-recover-password.html"><i class="fa fa-angle-right"></i> Recover password</a></li>
               </ul>
             </li>
-            <li><a href="pages-profile.html"><i class="fa fa-angle-right"></i> Profile page</a></li>
-            <li><a href="pages-invoice.html"><i class="fa fa-angle-right"></i> Invoice</a></li>
-            <li><a href="pages-treeview.html"><i class="fa fa-angle-right"></i> Treeview</a></li>
-            <li><a href="pages-pricing.html"><i class="fa fa-angle-right"></i> Pricing</a></li>
-            <li><a href="pages-gallery.html"><i class="fa fa-angle-right"></i> Gallery</a></li>
-            <li><a href="pages-faq.html"><i class="fa fa-angle-right"></i> Faqs</a></li>
-            <li><a href="pages-404.html"><i class="fa fa-angle-right"></i> 404 Error Page</a></li>
+            
           </ul>
         </li>
         <li class="treeview"> <a href="#"> <i class="icon-location-pin"></i> <span>Maps</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
@@ -110,9 +103,7 @@
           <ul class="treeview-menu">
             <li><a href="icon-fontawesome.html"><i class="fa fa-angle-right"></i> Fontawesome Icons</a></li>
             <li><a href="icon-themify.html"><i class="fa fa-angle-right"></i> Themify Icons</a></li>
-            <li><a href="icon-weather.html"><i class="fa fa-angle-right"></i> Weather Icons</a></li>
-            <li><a href="icon-simple-lineicon.html"><i class="fa fa-angle-right"></i> Simple Lineicons</a></li>
-            <li><a href="icon-flag.html"><i class="fa fa-angle-right"></i> Flag Icons</a></li>
+            
           </ul>
         </li>
         <li class="treeview"> <a href="#"> <i class="icon-action-redo"></i> <span>Multilevel</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
