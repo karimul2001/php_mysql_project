@@ -126,7 +126,8 @@ if(!isset($_SESSION['email'])){
             <label>Address</label><br>
             <textarea name="address" id="" cols='161'></textarea>
           </div>
-          <input type="submit" name="submit" value="Submit">
+          <input type="submit" name="submit" value="Submit" class="btn btn-outline-success">
+          <a href="employee_list.php"><input type="button" value="Show Employee List" class="btn btn-outline-info"></a>
           </form>
 
           

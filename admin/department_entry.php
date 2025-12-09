@@ -1,3 +1,10 @@
+<?php include_once("includes/db_config.php"); 
+session_start();
+
+if(!isset($_SESSION['email'])){
+  header("Location: index.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,11 +54,11 @@
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
       <div class="content-header sty-two">
-        <h1 class="text-white">Form Validation</h1>
+        <h1 class="text-white">Department Entry</h1>
         <ol class="breadcrumb">
           <li><a href="#">Home</a></li>
           <li><i class="fa fa-angle-right"></i> <a href="#">Form</a></li>
-          <li><i class="fa fa-angle-right"></i> Form Validation</li>
+          <li><i class="fa fa-angle-right"></i> Department</li>
         </ol>
       </div>
 
@@ -86,12 +93,14 @@
             }
             ?>
 
-            <h4>Validation States</h4>
+            <h4>Department Entry Here</h4>
 
             <form action="" method="post">
               <label for="">Department Name:</label><br>
               <input type="text" name="department" placeholder="Enter department name"><br><br>
-              <input type="submit" name="submit" value="Submit">
+              <input type="submit" name="submit" value="Submit" class="btn btn-success">
+              <a href="department_list.php"><input type="button" value="Show Department List" class="btn btn-info"></a>
+              
             </form>
           </div>
         </div>

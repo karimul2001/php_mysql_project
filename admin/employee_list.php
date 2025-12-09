@@ -42,9 +42,13 @@ if(!isset($_SESSION['email'])){
 <![endif]-->
 <style>
   table, th,td{
-    border: 1px solid black;
+    border: 2px solid black;
     border-collapse: collapse;
     height: 50px;
+    
+  }
+  th, td{
+    text-align: center;
   }
 </style>
 
@@ -71,10 +75,8 @@ if(!isset($_SESSION['email'])){
     <div class="content">
       <div class="card">
       <div class="card-body">
-        <h4 class="text-black text-dark">Employee List</h4>
-        <?php
-          if(isset($_POST['']))
-        ?>
+        <h4 class="text-black text-dark">Employee Data Record</h4>
+        
         <div class="table-responsive">
           <table>
             <thead>
@@ -91,6 +93,8 @@ if(!isset($_SESSION['email'])){
                 <th scope="col">Join Date</th>
                 <th scope="col">Salary</th>
                 <th scope="col">Address</th>
+                <th scope="col" colspan="2">Action</th>
+
               </tr>
             </thead>
             <?php
@@ -113,6 +117,8 @@ if(!isset($_SESSION['email'])){
                 <td><?php echo $raw['join_date']; ?></td>
                 <td><?php echo $raw['salary']; ?></td>
                 <td><?php echo $raw['address']; ?></td>
+                <td><a href=""><input type="button" value="Edit" class="btn btn-outline-info"></a></td>
+                <td><a onclick="return confirm('Are you sure delete')" href="employee_delete.php?id=<?php echo $raw['employee_id']; ?>"><input type="button" value="Delete" class="btn btn-outline-danger"></a></td>
                 
               </tr>
               <?php } ?>
@@ -122,7 +128,9 @@ if(!isset($_SESSION['email'])){
         </div>
         
         <hr class="m-t-1 m-b-3">
-        <a href="employee_entry.php"><input type="button" value="Employee Entry"></a>
+        <a href="employee_entry.php"><input type="button" value="Add Employee" class="btn btn-outline-primary"></a>
+        
+        
        
       </div></div>
     </div>

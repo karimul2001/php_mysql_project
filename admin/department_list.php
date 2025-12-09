@@ -46,8 +46,13 @@ if(!isset($_SESSION['email'])){
 <![endif]-->
 <style>
   table, th, td{
-    border: 1px solid black;
+    border: 2px solid black;
     border-collapse: collapse;
+    height: 40px;
+    width: 700px;
+  }
+  th, td{
+    text-align: center;
   }
 </style>
 
@@ -91,7 +96,8 @@ if(!isset($_SESSION['email'])){
         <td>Delete</td>
       </tr>
       <?php endwhile; ?>
-    </table>
+    </table><br>
+    <a href="department_entry.php"><input type="button" value="Add Department" class="btn btn-info"></a>
     </div>
     <!-- /.content --> 
   </div>

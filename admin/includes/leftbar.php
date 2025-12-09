@@ -22,32 +22,15 @@
             <li><a href="department_entry.php"><i class="fa fa-angle-right"></i> Department Entry</a></li>
             
             <li><a href="department_list.php"><i class="fa fa-angle-right"></i>Department List</a></li>
-            <li><a href="apps-contact-grid.html"><i class="fa fa-angle-right"></i> Contact  Grid</a></li>
-            <li><a href="apps-contact-details.html"><i class="fa fa-angle-right"></i> Contact Detail</a></li>
-          </ul>
-        </li>
-        <li class="treeview"> <a href="#"> <i class="ti-email"></i> <span>Notification</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
-          <ul class="treeview-menu">
-            <li><a href="apps-mailbox.html"><i class="fa fa-angle-right"></i> Mailbox</a></li>
-            <li><a href="apps-mailbox-detail.html"><i class="fa fa-angle-right"></i> Mailbox Detail</a></li>
-            <li><a href="apps-compose-mail.html"><i class="fa fa-angle-right"></i> Compose Mail</a></li>
-          </ul>
-        </li>
-        <li class="treeview"> <a href="#"> <i class="icon-frame"></i> <span>UI Elements</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
-          <ul class="treeview-menu">
-            <li><a href="ui-cards.html" class="active"><i class="fa fa-angle-right"></i> Cards</a></li>
-            <li><a href="ui-user-card.html"><i class="fa fa-angle-right"></i> User Cards</a></li>
             
-            <li><a href="ui-notification.html"><i class="fa fa-angle-right"></i> Notification</a></li>
-            
-            <li><a href="ui-carousel.html"><i class="fa fa-angle-right"></i> Carousel</a></li>
           </ul>
         </li>
         
-        <li class="treeview"> <a href="#"> <i class="icon-note"></i> <span>Forms</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+        
+        <li class="treeview"> <a href="#"> <i class="icon-note"></i> <span>Employee</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
           <ul class="treeview-menu">
             <li><a href="employee_entry.php"><i class="fa fa-angle-right"></i> Employee Entry</a></li>
-            <li><a href="form-validation.php"><i class="fa fa-angle-right"></i> Form Validation</a></li>
+            <li><a href="employee_list.php"><i class="fa fa-angle-right"></i> Employee List</a></li>
             <li><a href="form-wizard.html"><i class="fa fa-angle-right"></i> Form Wizard</a></li>
             <li><a href="form-layouts.html"><i class="fa fa-angle-right"></i> Form Layouts</a></li>
             <li><a href="form-uploads.html"><i class="fa fa-angle-right"></i> Form File Upload</a></li>
@@ -104,6 +87,23 @@
             <li><a href="icon-fontawesome.html"><i class="fa fa-angle-right"></i> Fontawesome Icons</a></li>
             <li><a href="icon-themify.html"><i class="fa fa-angle-right"></i> Themify Icons</a></li>
             
+          </ul>
+        </li>
+        <li class="treeview"> <a href="#"> <i class="ti-email"></i> <span>Notification</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+          <ul class="treeview-menu">
+            <li><a href="apps-mailbox.html"><i class="fa fa-angle-right"></i> Mailbox</a></li>
+            <li><a href="apps-mailbox-detail.html"><i class="fa fa-angle-right"></i> Mailbox Detail</a></li>
+            <li><a href="apps-compose-mail.html"><i class="fa fa-angle-right"></i> Compose Mail</a></li>
+          </ul>
+        </li>
+        <li class="treeview"> <a href="#"> <i class="icon-frame"></i> <span>UI Elements</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+          <ul class="treeview-menu">
+            <li><a href="ui-cards.html" class="active"><i class="fa fa-angle-right"></i> Cards</a></li>
+            <li><a href="ui-user-card.html"><i class="fa fa-angle-right"></i> User Cards</a></li>
+            
+            <li><a href="ui-notification.html"><i class="fa fa-angle-right"></i> Notification</a></li>
+            
+            <li><a href="ui-carousel.html"><i class="fa fa-angle-right"></i> Carousel</a></li>
           </ul>
         </li>
         <li class="treeview"> <a href="#"> <i class="icon-action-redo"></i> <span>Multilevel</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
