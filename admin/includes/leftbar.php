@@ -37,20 +37,21 @@
             <li><a href="form-summernote.html"><i class="fa fa-angle-right"></i> Summernote</a></li>
           </ul>
         </li>
-        <li class="treeview"> <a href="#"> <i class="fa fa-table"></i> <span>Tables</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
-          <ul class="treeview-menu">
-            <li><a href="employee_list.php"><i class="fa fa-angle-right"></i> Employee List</a></li>
-            <li><a href="table-layout.html"><i class="fa fa-angle-right"></i> Table Layouts</a></li>
-            <li><a href="table-data-table.html"><i class="fa fa-angle-right"></i> Data Tables</a></li>
-            <li><a href="table-jsgrid.html"><i class="fa fa-angle-right"></i> Js Grid Table</a></li>
-          </ul>
-        </li>
         <li class="treeview"> <a href="#"> <i class="icon-layers"></i> <span>Attendence</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
           <ul class="treeview-menu">
             <li><a href="attendence_entry.php"><i class="fa fa-angle-right"></i> Attendence Entry</a></li>
             <li><a href="attendence_show.php"><i class="fa fa-angle-right"></i> Show Attendence</a></li>
           </ul>
         </li>
+        <li class="treeview"> <a href="#"> <i class="fa fa-table"></i> <span>Leaves</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+          <ul class="treeview-menu">
+            <li><a href="leaves_history.php"><i class="fa fa-angle-right"></i> Leaves History</a></li>
+            <li><a href="leaves_apply.php"><i class="fa fa-angle-right"></i> Leaves Apply</a></li>
+            <li><a href="table-data-table.html"><i class="fa fa-angle-right"></i> Data Tables</a></li>
+            <li><a href="table-jsgrid.html"><i class="fa fa-angle-right"></i> Js Grid Table</a></li>
+          </ul>
+        </li>
+        
         
         <li class="treeview"> <a href="#"><i class="icon-chart"></i> <span>Charts</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
           <ul class="treeview-menu">

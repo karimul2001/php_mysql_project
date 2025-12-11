@@ -45,6 +45,7 @@ if(!isset($_SESSION['email'])){
     border: 2px solid black;
     border-collapse: collapse;
     height: 45px;
+    width: 1150px;
   }
   th, td {
     text-align: center;
