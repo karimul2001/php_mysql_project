@@ -89,17 +89,17 @@ if(!isset($_SESSION['email'])){
                 <th scope="col">Phone</th>
                 <th scope="col">Gender</th>
                 <th scope="col">Date of Birth</th>
-                <th scope="col">Department ID</th>
+                <th scope="col">Department</th>
                 <th scope="col">position</th>
                 <th scope="col">Join Date</th>
-                <th scope="col">Salary</th>
-                <th scope="col">Address</th>
+                
+               
                 <th scope="col" colspan="2">Action</th>
 
               </tr>
             </thead>
             <?php
-              $sql = "SELECT * FROM employees";
+              $sql = "SELECT * FROM employee_depts_view";
               $rawData = $conn->query($sql);
  
             ?>
@@ -113,11 +113,10 @@ if(!isset($_SESSION['email'])){
                 <td><?php echo $raw['phone']; ?></td>
                 <td><?php echo $raw['gender']; ?></td>
                 <td><?php echo $raw['dob']; ?></td>
-                <td><?php echo $raw['department_id']; ?></td>
+                <td><?php echo $raw['department_name']; ?></td>
                 <td><?php echo $raw['position']; ?></td>
                 <td><?php echo $raw['join_date']; ?></td>
-                <td><?php echo $raw['salary']; ?></td>
-                <td><?php echo $raw['address']; ?></td>
+                
                 <td><a href="employee_edit.php?id=<?php echo $raw['employee_id']; ?>"><input type="button" value="Edit" class="btn btn-outline-info"></a></td>
                 <td><a onclick="return confirm('Are you sure delete')" href="employee_delete.php?id=<?php echo $raw['employee_id']; ?>"><input type="button" value="Delete" class="btn btn-outline-danger"></a></td>
                 
