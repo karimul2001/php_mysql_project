@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 09, 2025 at 07:46 AM
+-- Generation Time: Dec 11, 2025 at 02:40 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -35,6 +35,14 @@ CREATE TABLE `attendance` (
   `check_out` time NOT NULL,
   `working_hours` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `attendance`
+--
+
+INSERT INTO `attendance` (`attendance_id`, `employee_id`, `date`, `check_in`, `check_out`, `working_hours`) VALUES
+(1, 1, '2025-12-10', '01:14:00', '22:20:00', 21),
+(2, 9, '2025-12-10', '21:23:00', '14:23:00', 17);
 
 -- --------------------------------------------------------
 
@@ -86,7 +94,10 @@ CREATE TABLE `employees` (
 INSERT INTO `employees` (`employee_id`, `first_name`, `last_name`, `email`, `phone`, `gender`, `dob`, `department_id`, `position`, `join_date`, `salary`, `address`) VALUES
 (1, 'karimul', 'islam', 'karimul.bd501@gmail.com', '01521459198', 'male', '2007-12-10', 1, 'Manager', '2024-12-10', 30000, 'Mohakhali'),
 (2, 'Neloy', 'Ahamed', 'neloy@gmail.com', '01421345678', 'male', '2008-06-08', 2, 'Manager', '2024-07-08', 23500, 'Jhenaidah'),
-(3, 'Atikur', 'Rahaman', 'atikur@gmail.com', '01788334455', 'male', '2005-05-09', 2, 'Assistant Manager', '2024-07-08', 20500, 'Jhenaidah Sadar');
+(3, 'Atikur', 'Rahaman', 'atikur@gmail.com', '01788334455', 'male', '2005-05-09', 2, 'Assistant Manager', '2024-07-08', 20500, 'Jhenaidah Sadar'),
+(4, 'maruf', 'khan', 'maruf@gmail.com', '01421345678', 'male', '2010-02-10', 2, 'Manager', '0000-00-00', 23500, 'Jhenaidah Sadar'),
+(9, 'Abdul', 'Mursalin', 'mursalin@gmail.com', '01931433905', 'male', '2002-06-10', 3, 'web developerasd', '2025-12-09', 23500, 'Jhenaidah Sadar'),
+(10, 'admin', 'admin', 'admin@gmail.com', '01332445566', 'male', '2025-12-10', 3, 'web developerasd', '2025-12-10', 23500, 'Kotchadpur');
 
 -- --------------------------------------------------------
 
@@ -102,8 +113,22 @@ CREATE TABLE `leaves` (
   `end_date` date NOT NULL,
   `reason` varchar(100) NOT NULL,
   `status` varchar(20) NOT NULL,
-  `approved_by` int(11) NOT NULL
+  `approved_by` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `leaves`
+--
+
+INSERT INTO `leaves` (`leave_id`, `employee_id`, `leave_type`, `start_date`, `end_date`, `reason`, `status`, `approved_by`) VALUES
+(1, 1, 'yearly holyday', '2025-12-10', '2025-12-14', 'I am sick', 'abc', 'Manager'),
+(2, 2, 'Annual Leave', '2025-12-10', '2025-12-12', 'Brother Weddnig', 'Pending', ''),
+(3, 5, 'Maternity Leave', '2025-12-11', '2025-12-15', 'maternity', 'Pending', ''),
+(4, 3, 'Casual Leave', '2025-12-11', '2025-12-14', 'i will go home', 'Pending', ''),
+(5, 5, 'Sick Leave', '2025-12-10', '2025-12-12', 'fdagfd', 'Pending', ''),
+(6, 6, 'Sick Leave', '2025-12-10', '2025-12-12', 'ghdhs', 'Pending', ''),
+(7, 7, 'Maternity Leave', '2025-12-10', '2025-12-11', 'asdf', 'Pending', ''),
+(8, 7, 'Maternity Leave', '2025-12-10', '2025-12-11', 'asdf', 'Pending', '');
 
 -- --------------------------------------------------------
 
@@ -172,7 +197,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `employee_id`, `username`, `email`, `password`, `role`, `status`) VALUES
-(1, 1, 'karimul', 'karimul.bd501@gmail.com', '21232f297a57a5a743894a0e4a801fc3', 'abc', 'abc');
+(1, 1, 'karimul', 'karimul.bd501@gmail.com', '21232f297a57a5a743894a0e4a801fc3', 'abc', 'abc'),
+(3, 10, 'admin', 'admin@gmail.com', '21232f297a57a5a743894a0e4a801fc3', 'abc', 'abc');
 
 --
 -- Indexes for dumped tables
@@ -234,7 +260,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `attendance`
 --
 ALTER TABLE `attendance`
-  MODIFY `attendance_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `attendance_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `departments`
@@ -246,13 +272,13 @@ ALTER TABLE `departments`
 -- AUTO_INCREMENT for table `employees`
 --
 ALTER TABLE `employees`
-  MODIFY `employee_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `employee_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `leaves`
 --
 ALTER TABLE `leaves`
-  MODIFY `leave_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `leave_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `notifications`
@@ -276,7 +302,7 @@ ALTER TABLE `performance_reviews`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

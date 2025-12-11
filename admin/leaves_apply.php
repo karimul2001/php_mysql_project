@@ -112,7 +112,7 @@ if(!isset($_SESSION['email'])){
 
               if($sql->execute()){
                   $_SESSION['msg'] = "Leave Application Submitted Successfully!";
-                  //echo "Leave Application Submitted Successfully!";
+                  echo "Leave Application Submitted Successfully!";
               } else {
                   echo "<div class='alert alert-danger'>Error applying leave!</div>";
               }
