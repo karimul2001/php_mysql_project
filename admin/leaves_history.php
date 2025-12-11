@@ -26,8 +26,11 @@ if(!isset($_SESSION['email'])){
 <body class="skin-blue sidebar-mini">
 
 <div class="wrapper boxed-wrapper">
-
+<!-- Header -->
   <?php include_once("includes/header.php"); ?>
+
+<!-- Left Bar -->
+ 
   <?php include_once("includes/leftbar.php"); ?>
 
   <div class="content-wrapper">
