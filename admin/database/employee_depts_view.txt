@@ -1,0 +1,2 @@
+CREATE VIEW employee_depts_view AS
+SELECT employee_id, first_name, last_name, email, phone, gender, dob, position, join_date, department_name FROM employees, departments WHERE departments.department_id = employees.department_id
