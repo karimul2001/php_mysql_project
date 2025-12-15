@@ -91,7 +91,7 @@ if(!isset($_SESSION['email'])){
     </thead>
 
     <?php
-      $sql = "SELECT * FROM attendance ORDER BY date DESC";
+      $sql = "SELECT * FROM attendance ORDER BY date";
       $rawData = $conn->query($sql);
     ?>
 
