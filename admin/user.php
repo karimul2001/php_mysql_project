@@ -36,44 +36,44 @@ if(!isset($_SESSION['email'])){
         <div class="card">
           <div class="card-body">
 
-            <?php
-if(isset($_POST['submit'])){
+         <?php
+           if(isset($_POST['submit'])){
 
-  $employee_id = $_POST['employee_id'];
-  $username    = $_POST['username'];
-  $email       = $_POST['email'];
-  $password    = md5($_POST['password']);
-  $role        = $_POST['role'];
-  $status      = $_POST['status'];
+            $employee_id = $_POST['employee_id'];
+            $username    = $_POST['username'];
+            $email       = $_POST['email'];
+            $password    = md5($_POST['password']);
+            $role        = $_POST['role'];
+            $status      = $_POST['status'];
 
-  /* ===== Image Upload ===== */
-  $photo_name = $_FILES['photo']['name'];
-  $tmp_name   = $_FILES['photo']['tmp_name'];
+             /* ===== Image Upload ===== */
+            $photo_name = $_FILES['photo']['name'];
+            $tmp_name   = $_FILES['photo']['tmp_name'];
 
-  $upload_dir = "uploads/users/";
-  if(!is_dir($upload_dir)){
-    mkdir($upload_dir, 0777, true);
-  }
+            $upload_dir = "uploads/users/";
+            if(!is_dir($upload_dir)){
+            mkdir($upload_dir, 0777, true);
+            }
 
-  $new_name = time()."_".$photo_name;
-  $upload_path = $upload_dir.$new_name;
+            $new_name = time()."_".$photo_name;
+            $upload_path = $upload_dir.$new_name;
 
-  if(move_uploaded_file($tmp_name, $upload_path)){
+            if(move_uploaded_file($tmp_name, $upload_path)){
 
-    $sql = "INSERT INTO users 
-    (employee_id, username, email, password, role, status, photos)
-    VALUES
-    ('$employee_id','$username','$email','$password','$role','$status','$new_name')";
+            $sql = "INSERT INTO users 
+            (employee_id, username, email, password, role, status, photos)
+            VALUES
+            ('$employee_id','$username','$email','$password','$role','$status','$new_name')";
 
-    if($conn->query($sql)){
-      echo '<div class="alert alert-success">User Added Successfully</div>';
-    }
+            if($conn->query($sql)){
+            echo '<div class="alert alert-success">User Added Successfully</div>';
+            }
 
-  }else{
-    echo '<div class="alert alert-danger">Photo Upload Failed</div>';
-  }
-}
-?>
+            }else{
+            echo '<div class="alert alert-danger">Photo Upload Failed</div>';
+            }
+            }
+          ?>
 
             <h4 class="text-center text-success">User Entry Form</h4>
 
