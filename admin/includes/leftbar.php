@@ -19,7 +19,7 @@
         </li>
         <li class="treeview"> <a href="#"> <i class="icon-grid"></i> <span>Department</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
           <ul class="treeview-menu">
-            <li><a href="department_entry.php"><i class="fa fa-angle-right"></i> Department Entry</a></li>
+            <li><a href="department_entry.php"><i class="fa fa-angle-right"></i>Department Entry</a></li>
             
             <li><a href="department_list.php"><i class="fa fa-angle-right"></i>Department List</a></li>
             

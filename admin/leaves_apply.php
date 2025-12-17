@@ -28,7 +28,7 @@ if(!isset($_SESSION['email'])){
 <div class="wrapper boxed-wrapper">
 
   <?php include_once("includes/header.php"); ?>
-  <?php include_once("includes/leftbar.php"); ?>
+   <?php include_once("includes/leftbar.php"); ?>
 
   <div class="content-wrapper">
 
