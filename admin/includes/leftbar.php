@@ -13,9 +13,7 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">PERSONAL</li>
         <li> <a href="dashboard.php"> <i class="icon-home"></i> <span>Dashboard</span> <span class="pull-right-container"> </span> </a>
-          <ul class="treeview-menu">
-            
-          </ul>
+          
         </li>
         <li class="treeview"> <a href="#"> <i class="icon-grid"></i> <span>Department</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
           <ul class="treeview-menu">
@@ -31,10 +29,7 @@
           <ul class="treeview-menu">
             <li><a href="employee_entry.php"><i class="fa fa-angle-right"></i> Employee Entry</a></li>
             <li><a href="employee_list.php"><i class="fa fa-angle-right"></i> Employee List</a></li>
-            <li><a href="form-wizard.html"><i class="fa fa-angle-right"></i> Form Wizard</a></li>
-            <li><a href="form-layouts.html"><i class="fa fa-angle-right"></i> Form Layouts</a></li>
-            <li><a href="form-uploads.html"><i class="fa fa-angle-right"></i> Form File Upload</a></li>
-            <li><a href="form-summernote.html"><i class="fa fa-angle-right"></i> Summernote</a></li>
+            
           </ul>
         </li>
         <li class="treeview"> <a href="#"> <i class="icon-layers"></i> <span>Attendence</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
@@ -43,7 +38,7 @@
             <li><a href="attendence_show.php"><i class="fa fa-angle-right"></i> Show Attendence</a></li>
           </ul>
         </li>
-        <li class="treeview"> <a href="#"> <i class="fa fa-table"></i> <span>Leaves</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+        <li class="treeview"> <a href="#"> <i class="fa fa-table icon-layers"></i> <span>Leaves</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
           <ul class="treeview-menu">
             <li><a href="leaves_history.php"><i class="fa fa-angle-right"></i> Leaves History</a></li>
             <li><a href="leaves_apply.php"><i class="fa fa-angle-right"></i> Leaves Apply</a></li>
