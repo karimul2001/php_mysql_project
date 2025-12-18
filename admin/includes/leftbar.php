@@ -53,12 +53,27 @@
         </li>
         
         
-        <li class="treeview"> <a href="#"><i class="icon-chart"></i> <span>Charts</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+        <li class="treeview"> <a href="#"><i class="icon-chart"></i> <span>Payroll</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
           <ul class="treeview-menu">
-            <li><a href="chart-morris.html"><i class="fa fa-angle-right"></i> Morris Chart</a></li>
-            <li><a href="chart-chartist.html"><i class="fa fa-angle-right"></i> Chartis Chart</a></li>
-            <li><a href="chart-knob.html"><i class="fa fa-angle-right"></i> Knob Chart</a></li>
+            <li><a href="payroll_list.php"><i class="fa fa-angle-right"></i> Payroll List</a></li>
+            <li><a href="payroll.php"><i class="fa fa-angle-right"></i> Salary Manage</a></li>
+            
+            
 
+          </ul>
+        </li>
+        <li class="treeview"> <a href="#"><i class="icon-chart"></i> <span>Performance</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+          <ul class="treeview-menu">
+            <li><a href="performance_review.php"><i class="fa fa-angle-right"></i> Performance Reviews</a></li>
+            <li><a href="performance.php"><i class="fa fa-angle-right"></i> Performance</a></li>
+            
+            
+
+          </ul>
+        </li>
+        <li class="treeview"> <a href="#"> <i class="icon-location-pin"></i> <span>User</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+          <ul class="treeview-menu">
+            <li><a href="user.php"><i class="fa fa-angle-right"></i> User</a></li>
           </ul>
         </li>
         <li class="treeview"> <a href="#"> <i class="icon-docs"></i> <span>Sample Pages</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
@@ -77,12 +92,7 @@
             
           </ul>
         </li>
-        <li class="treeview"> <a href="#"> <i class="icon-location-pin"></i> <span>Maps</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
-          <ul class="treeview-menu">
-            <li><a href="map-google.php"><i class="fa fa-angle-right"></i> Google Maps</a></li>
-            <li><a href="map-vector.php"><i class="fa fa-angle-right"></i> Vector Maps</a></li>
-          </ul>
-        </li>
+        
         <li class="treeview"> <a href="#"> <i class="icon-energy"></i> <span>Icons</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
           <ul class="treeview-menu">
             <li><a href="icon-fontawesome.html"><i class="fa fa-angle-right"></i> Fontawesome Icons</a></li>

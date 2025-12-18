@@ -70,7 +70,7 @@ if(!isset($_SESSION['email'])){
                 <div class="col-md-6 text-white">
                   <p>Total Employee</p>
                   <h2 class="font-weight-bold">$15,859</h2>
-                  <a href="#">View Statement</a> </div>
+                  <a href="employee_entry.php">View Statement</a> </div>
                 <div class="col-md-6 m-t-2 text-right"> <span id="spa-bar"></span> </div>
               </div>
             </div>
