@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2025 at 02:40 AM
+-- Generation Time: Dec 20, 2025 at 04:04 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -42,7 +42,8 @@ CREATE TABLE `attendance` (
 
 INSERT INTO `attendance` (`attendance_id`, `employee_id`, `date`, `check_in`, `check_out`, `working_hours`) VALUES
 (1, 1, '2025-12-10', '01:14:00', '22:20:00', 21),
-(2, 9, '2025-12-10', '21:23:00', '14:23:00', 17);
+(2, 9, '2025-12-10', '21:23:00', '14:23:00', 17),
+(3, 10, '2025-12-14', '21:46:00', '15:46:00', 18);
 
 -- --------------------------------------------------------
 
@@ -77,6 +78,7 @@ CREATE TABLE `employees` (
   `first_name` varchar(50) NOT NULL,
   `last_name` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
+  `password` char(32) NOT NULL,
   `phone` varchar(11) NOT NULL,
   `gender` enum('male','female') NOT NULL,
   `dob` date NOT NULL,
@@ -91,13 +93,33 @@ CREATE TABLE `employees` (
 -- Dumping data for table `employees`
 --
 
-INSERT INTO `employees` (`employee_id`, `first_name`, `last_name`, `email`, `phone`, `gender`, `dob`, `department_id`, `position`, `join_date`, `salary`, `address`) VALUES
-(1, 'karimul', 'islam', 'karimul.bd501@gmail.com', '01521459198', 'male', '2007-12-10', 1, 'Manager', '2024-12-10', 30000, 'Mohakhali'),
-(2, 'Neloy', 'Ahamed', 'neloy@gmail.com', '01421345678', 'male', '2008-06-08', 2, 'Manager', '2024-07-08', 23500, 'Jhenaidah'),
-(3, 'Atikur', 'Rahaman', 'atikur@gmail.com', '01788334455', 'male', '2005-05-09', 2, 'Assistant Manager', '2024-07-08', 20500, 'Jhenaidah Sadar'),
-(4, 'maruf', 'khan', 'maruf@gmail.com', '01421345678', 'male', '2010-02-10', 2, 'Manager', '0000-00-00', 23500, 'Jhenaidah Sadar'),
-(9, 'Abdul', 'Mursalin', 'mursalin@gmail.com', '01931433905', 'male', '2002-06-10', 3, 'web developerasd', '2025-12-09', 23500, 'Jhenaidah Sadar'),
-(10, 'admin', 'admin', 'admin@gmail.com', '01332445566', 'male', '2025-12-10', 3, 'web developerasd', '2025-12-10', 23500, 'Kotchadpur');
+INSERT INTO `employees` (`employee_id`, `first_name`, `last_name`, `email`, `password`, `phone`, `gender`, `dob`, `department_id`, `position`, `join_date`, `salary`, `address`) VALUES
+(1, 'karimul', 'islam', 'karimul.bd501@gmail.com', '21232f297a57a5a743894a0e4a801fc3', '01521459198', 'male', '2007-12-10', 1, 'Manager', '2024-12-10', 30000, 'Mohakhali'),
+(2, 'Neloy', 'Ahamed', 'neloy@gmail.com', '', '01421345678', 'male', '2008-06-08', 2, 'Manager', '2024-07-08', 23500, 'Jhenaidah'),
+(3, 'Atikur', 'Rahaman', 'atikur@gmail.com', '', '01788334455', 'male', '2005-05-09', 2, 'Assistant Manager', '2024-07-08', 20500, 'Jhenaidah Sadar'),
+(4, 'maruf', 'khan', 'maruf@gmail.com', '', '01421345678', 'male', '2010-02-10', 2, 'Manager', '0000-00-00', 23500, 'Jhenaidah Sadar'),
+(9, 'Abdul', 'Mursalin', 'mursalin@gmail.com', '', '01931433905', 'male', '2002-06-10', 3, 'web developerasd', '2025-12-09', 23500, 'Jhenaidah Sadar'),
+(10, 'admin', 'admin', 'admin@gmail.com', '21232f297a57a5a743894a0e4a801fc3', '01332445566', 'male', '2025-12-10', 3, 'web developerasd', '2025-12-10', 23500, 'Kotchadpur'),
+(11, 'Rakib', 'Rayhan', 'rakib@gmail.com', '', '01332445566', 'male', '2025-12-04', 4, 'Assistant Manager', '2025-12-18', 30500, 'Jhenaidah');
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `employee_depts_view`
+-- (See below for the actual view)
+--
+CREATE TABLE `employee_depts_view` (
+`employee_id` int(11)
+,`first_name` varchar(50)
+,`last_name` varchar(50)
+,`email` varchar(50)
+,`phone` varchar(11)
+,`gender` enum('male','female')
+,`dob` date
+,`position` varchar(100)
+,`join_date` date
+,`department_name` varchar(100)
+);
 
 -- --------------------------------------------------------
 
@@ -161,6 +183,15 @@ CREATE TABLE `payroll` (
   `generated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `payroll`
+--
+
+INSERT INTO `payroll` (`payroll_id`, `employee_id`, `month`, `year`, `basic_salary`, `deducation`, `net_salary`, `generated_at`) VALUES
+(1, 1, 'December', 2025, 25000, 500, 24500, '0000-00-00 00:00:00'),
+(2, 1, 'December', 2025, 25000, 500, 24500, '0000-00-00 00:00:00'),
+(3, 2, 'December', 2025, 35000, 1000, 34000, '0000-00-00 00:00:00');
+
 -- --------------------------------------------------------
 
 --
@@ -176,6 +207,13 @@ CREATE TABLE `performance_reviews` (
   `comments` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `performance_reviews`
+--
+
+INSERT INTO `performance_reviews` (`review_id`, `employee_id`, `reviewer_id`, `review_date`, `rating`, `comments`) VALUES
+(1, 1, 1, '2025-12-17', 3, 'Your performance is not very good');
+
 -- --------------------------------------------------------
 
 --
@@ -189,16 +227,27 @@ CREATE TABLE `users` (
   `email` varchar(50) NOT NULL,
   `password` char(32) NOT NULL,
   `role` varchar(20) NOT NULL,
-  `status` varchar(20) NOT NULL
+  `status` varchar(20) NOT NULL,
+  `photos` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`, `employee_id`, `username`, `email`, `password`, `role`, `status`) VALUES
-(1, 1, 'karimul', 'karimul.bd501@gmail.com', '21232f297a57a5a743894a0e4a801fc3', 'abc', 'abc'),
-(3, 10, 'admin', 'admin@gmail.com', '21232f297a57a5a743894a0e4a801fc3', 'abc', 'abc');
+INSERT INTO `users` (`user_id`, `employee_id`, `username`, `email`, `password`, `role`, `status`, `photos`) VALUES
+(1, 1, 'karimul', 'karimul.bd501@gmail.com', '21232f297a57a5a743894a0e4a801fc3', 'abc', 'abc', ''),
+(3, 10, 'admin', 'admin@gmail.com', '21232f297a57a5a743894a0e4a801fc3', 'abc', 'abc', ''),
+(4, 1, 'karimul', 'karimul.bd501@gmail.com', '21232f297a57a5a743894a0e4a801fc3', 'admin', 'active', '1765992961_pexels-tirachard-kumtanom-112571-347141.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `employee_depts_view`
+--
+DROP TABLE IF EXISTS `employee_depts_view`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `employee_depts_view`  AS SELECT `employees`.`employee_id` AS `employee_id`, `employees`.`first_name` AS `first_name`, `employees`.`last_name` AS `last_name`, `employees`.`email` AS `email`, `employees`.`phone` AS `phone`, `employees`.`gender` AS `gender`, `employees`.`dob` AS `dob`, `employees`.`position` AS `position`, `employees`.`join_date` AS `join_date`, `departments`.`department_name` AS `department_name` FROM (`employees` join `departments`) WHERE `departments`.`department_id` = `employees`.`department_id` ;
 
 --
 -- Indexes for dumped tables
@@ -260,7 +309,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `attendance`
 --
 ALTER TABLE `attendance`
-  MODIFY `attendance_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `attendance_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `departments`
@@ -272,7 +321,7 @@ ALTER TABLE `departments`
 -- AUTO_INCREMENT for table `employees`
 --
 ALTER TABLE `employees`
-  MODIFY `employee_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `employee_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `leaves`
@@ -290,19 +339,19 @@ ALTER TABLE `notifications`
 -- AUTO_INCREMENT for table `payroll`
 --
 ALTER TABLE `payroll`
-  MODIFY `payroll_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `payroll_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `performance_reviews`
 --
 ALTER TABLE `performance_reviews`
-  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
