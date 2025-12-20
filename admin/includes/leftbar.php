@@ -41,9 +41,9 @@
         <li class="treeview"> <a href="#"> <i class="fa fa-table icon-layers"></i> <span>Leaves</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
           <ul class="treeview-menu">
             <li><a href="leaves_history.php"><i class="fa fa-angle-right"></i> Leaves History</a></li>
-            <li><a href="leaves_apply.php"><i class="fa fa-angle-right"></i> Leaves Apply</a></li>
-            <li><a href="table-data-table.html"><i class="fa fa-angle-right"></i> Data Tables</a></li>
-            <li><a href="table-jsgrid.html"><i class="fa fa-angle-right"></i> Js Grid Table</a></li>
+            
+            
+            
           </ul>
         </li>
         
@@ -71,64 +71,7 @@
             <li><a href="user.php"><i class="fa fa-angle-right"></i> User</a></li>
           </ul>
         </li>
-        <li class="treeview"> <a href="#"> <i class="icon-docs"></i> <span>Sample Pages</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
-          <ul class="treeview-menu">
-            <li><a href="pages-blank.html"><i class="fa fa-angle-right"></i> Blank page</a></li>
-            <li class="treeview"><a href="#"><i class="fa fa-angle-right"></i> Authentication <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
-              <ul class="treeview-menu">
-                <li><a href="pages-login.html"><i class="fa fa-angle-right"></i> Login 1</a></li>
-                <li><a href="pages-login-2.html"><i class="fa fa-angle-right"></i> Login 2</a></li>
-                <li><a href="pages-register.html"><i class="fa fa-angle-right"></i> Register</a></li>
-                <li><a href="pages-register2.html"><i class="fa fa-angle-right"></i> Register 2</a></li>
-                <li><a href="pages-lockscreen.html"><i class="fa fa-angle-right"></i> Lockscreen</a></li>
-                <li><a href="pages-recover-password.html"><i class="fa fa-angle-right"></i> Recover password</a></li>
-              </ul>
-            </li>
-            
-          </ul>
-        </li>
         
-        <li class="treeview"> <a href="#"> <i class="icon-energy"></i> <span>Icons</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
-          <ul class="treeview-menu">
-            <li><a href="icon-fontawesome.html"><i class="fa fa-angle-right"></i> Fontawesome Icons</a></li>
-            <li><a href="icon-themify.html"><i class="fa fa-angle-right"></i> Themify Icons</a></li>
-            
-          </ul>
-        </li>
-        <li class="treeview"> <a href="#"> <i class="ti-email"></i> <span>Notification</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
-          <ul class="treeview-menu">
-            <li><a href="apps-mailbox.html"><i class="fa fa-angle-right"></i> Mailbox</a></li>
-            <li><a href="apps-mailbox-detail.html"><i class="fa fa-angle-right"></i> Mailbox Detail</a></li>
-            <li><a href="apps-compose-mail.html"><i class="fa fa-angle-right"></i> Compose Mail</a></li>
-          </ul>
-        </li>
-        <li class="treeview"> <a href="#"> <i class="icon-frame"></i> <span>UI Elements</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
-          <ul class="treeview-menu">
-            <li><a href="ui-cards.html" class="active"><i class="fa fa-angle-right"></i> Cards</a></li>
-            <li><a href="ui-user-card.html"><i class="fa fa-angle-right"></i> User Cards</a></li>
-            
-            <li><a href="ui-notification.html"><i class="fa fa-angle-right"></i> Notification</a></li>
-            
-            <li><a href="ui-carousel.html"><i class="fa fa-angle-right"></i> Carousel</a></li>
-          </ul>
-        </li>
-        <li class="treeview"> <a href="#"> <i class="icon-action-redo"></i> <span>Multilevel</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
-          <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-angle-right"></i> Level One</a></li>
-            <li class="treeview"> <a href="#"><i class="fa fa-angle-right"></i> Level One <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
-              <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-angle-right"></i> Level Two</a></li>
-                <li class="treeview"> <a href="#" ><i class="fa fa-angle-right"></i> Level Two <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
-                  <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-angle-right"></i> Level Three</a></li>
-                    <li><a href="#"><i class="fa fa-angle-right"></i> Level Three</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li><a href="#"><i class="fa fa-angle-right"></i> Level One</a></li>
-          </ul>
-        </li>
       </ul>
     </div>
     <!-- /.sidebar --> 

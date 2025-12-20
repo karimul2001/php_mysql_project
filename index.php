@@ -1,3 +1,9 @@
+<?php
+
+$conn = new mysqli("localhost", "root", "", "hr_management");
+
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,7 +40,7 @@
     <link rel="stylesheet" href="dist/plugins/chartist-js/chartist.min.css">
     <link rel="stylesheet" href="dist/plugins/chartist-js/chartist-plugin-tooltip.css">
 
-    
+
 
 </head>
 
@@ -55,7 +61,7 @@
                 </ul>
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
-                        
+
                     </ul>
                 </div>
             </nav>
@@ -65,15 +71,15 @@
             <!-- sidebar -->
             <div class="sidebar">
                 <!-- Sidebar user panel -->
-                
+
 
                 <!-- sidebar menu -->
                 <ul class="sidebar-menu" data-widget="tree">
-                    
+
                     <li><a href="admin/"><i class="fa fa-angle-right"></i>Admin Login</a></li>
                     <li><a href="employees/"><i class="fa fa-angle-right"></i>Employee Login</a></li>
-                    
-                    
+
+
                 </ul>
             </div>
             <!-- /.sidebar -->
@@ -83,8 +89,8 @@
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
             
-            
-           
+
+
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
@@ -128,9 +134,11 @@
     <script src="dist/js/demo.js"></script>
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
-        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-        (function () {
-            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+        var Tawk_API = Tawk_API || {},
+            Tawk_LoadStart = new Date();
+        (function() {
+            var s1 = document.createElement("script"),
+                s0 = document.getElementsByTagName("script")[0];
             s1.async = true;
             s1.src = 'https://embed.tawk.to/5b7257d2afc2c34e96e78bfc/default';
             s1.charset = 'UTF-8';

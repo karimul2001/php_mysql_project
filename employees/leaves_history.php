@@ -13,10 +13,10 @@ if(!isset($_SESSION['email'])){
 <title>Leave History</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="dist/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="dist/css/style.css">
-<link rel="stylesheet" href="dist/css/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+<link rel="stylesheet" href="../dist/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="../dist/css/style.css">
+<link rel="stylesheet" href="../dist/css/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
 
 <style>
   label { font-weight: bold; }
@@ -66,7 +66,6 @@ if(!isset($_SESSION['email'])){
                 <th>End Date</th>
                 <th>Reason</th>
                 <th>Status</th>
-                <th>Action</th>
               </tr>
             </thead>
             <tbody>
@@ -89,13 +88,11 @@ if(!isset($_SESSION['email'])){
                   }
                   ?>
                 </td>
-                <td><a href="leave_confirm.php?id=<?php echo $row['leave_id']; ?>"><input type="submit" value="Confirm" class="btn btn-outline-success"></a></td>
-                
               </tr>
             <?php endwhile; ?>
             </tbody>
           </table>
-          
+          <a href="leaves_apply.php"><input type="button" value="Apply" class="btn btn-outline-primary"></a>
         </div>
       </div>
     </div>
@@ -111,9 +108,9 @@ if(!isset($_SESSION['email'])){
 
 </div>
 
-<script src="dist/js/jquery.min.js"></script>
-<script src="dist/bootstrap/js/bootstrap.min.js"></script>
-<script src="dist/js/bizadmin.js"></script>
+<script src="../dist/js/jquery.min.js"></script>
+<script src="../dist/bootstrap/js/bootstrap.min.js"></script>
+<script src="../dist/js/bizadmin.js"></script>
 
 </body>
 </html>

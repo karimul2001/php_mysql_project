@@ -18,6 +18,12 @@ if (!isset($_SESSION['email'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="dist/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="dist/css/style.css">
+<link rel="stylesheet" href="dist/css/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="dist/css/et-line-font/et-line-font.css">
+<link rel="stylesheet" href="dist/css/themify-icons/themify-icons.css">
+<link rel="stylesheet" href="dist/css/simple-lineicon/simple-line-icons.css">
+<link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+
 </head>
 
 <body class="skin-blue sidebar-mini">

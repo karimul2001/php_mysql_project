@@ -23,6 +23,14 @@
             
           </ul>
         </li>
+        <li class="treeview"> <a href="#"> <span>Leaves</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+          <ul class="treeview-menu">
+            <li><a href="leaves_history.php"><i class="fa fa-angle-right"></i> Leaves History</a></li>
+            <li><a href="leaves_apply.php"><i class="fa fa-angle-right"></i> Leaves Apply</a></li>
+            
+            
+          </ul>
+        </li>
         
         
         
