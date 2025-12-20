@@ -23,12 +23,19 @@
             
           </ul>
         </li>
-        <li class="treeview"> <a href="#"> <span>Leaves</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+        <li class="treeview"> <a href="#"> <i class="fa fa-table icon-layers"></i><span>Leaves</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
           <ul class="treeview-menu">
             <li><a href="leaves_history.php"><i class="fa fa-angle-right"></i> Leaves History</a></li>
             <li><a href="leaves_apply.php"><i class="fa fa-angle-right"></i> Leaves Apply</a></li>
             
             
+          </ul>
+        </li>
+        <li class="treeview"> <a href="#"><i class="icon-chart"></i> <span>Performance</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+          <ul class="treeview-menu">
+            <li><a href="performance_review.php"><i class="fa fa-angle-right"></i> Performance Reviews</a></li>
+
+
           </ul>
         </li>
         
