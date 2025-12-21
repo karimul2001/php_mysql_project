@@ -34,9 +34,7 @@ if (!isset($_SESSION['email'])) {
 
     <div class="content-wrapper">
 
-      <div class="content-header sty-two">
-        <h1 class="text-white text-center">User Entry</h1>
-      </div>
+      
 
       <div class="content">
         <div class="card">
