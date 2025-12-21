@@ -71,7 +71,7 @@ session_start();
             <!-- sidebar -->
             <div class="sidebar">
                 <!-- Sidebar user panel -->
-
+                
 
                 <!-- sidebar menu -->
                 <ul class="sidebar-menu" data-widget="tree">
@@ -88,7 +88,7 @@ session_start();
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
-            
+            <img style="margin-top: ; margin-left:" src="dist/img/employee.png" alt="">
 
 
             <!-- /.content -->

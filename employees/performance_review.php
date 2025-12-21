@@ -105,9 +105,7 @@ th, td{
         </div>
 
         <hr>
-        <a href="performance.php" class="btn btn-outline-success">
-          Add New Review
-        </a>
+        
 
       </div>
     </div>
