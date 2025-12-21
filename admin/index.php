@@ -1,3 +1,10 @@
+
+<style>
+  body {
+    background-image: url('https://assets.entrepreneur.com/content/3x2/2000/20191126130426-FotoJet.jpeg') !important;
+  }
+</style>
+
 <?php include_once("includes/db_config.php");
 session_start();
 if (isset($_SESSION['email'])) {

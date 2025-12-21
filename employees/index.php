@@ -1,3 +1,9 @@
+<style>
+  body {
+    background-image: url('https://techrseries.com/wp-content/uploads/2022/11/Key-Characteristics-of-an-Effective-Employee-Management-System.jpg') !important;
+  }
+</style>
+
 <?php include_once("includes/db_config.php");
 session_start();
 if (isset($_SESSION['email'])) {

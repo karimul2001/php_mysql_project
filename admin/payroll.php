@@ -50,14 +50,7 @@ if(isset($_POST['submit'])){
 
 <div class="content-wrapper">
 
-  <div class="content-header sty-two">
-    <h1 class="text-white text-center">Payroll Entry</h1>
-    <ol class="breadcrumb">
-      <li><a href="#">Home</a></li>
-      <li><i class="fa fa-angle-right"></i> Payroll</li>
-      <li><i class="fa fa-angle-right"></i> Generate</li>
-    </ol>
-  </div>
+  
 
   <div class="content">
     <div class="card">
