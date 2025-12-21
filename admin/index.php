@@ -1,7 +1,7 @@
 
 <style>
   body {
-    background-image: url('https://assets.entrepreneur.com/content/3x2/2000/20191126130426-FotoJet.jpeg') !important;
+    background-image: url('dist/img/admin.jpeg') !important;
   }
 </style>
 

@@ -1,6 +1,6 @@
 <style>
   body {
-    background-image: url('https://techrseries.com/wp-content/uploads/2022/11/Key-Characteristics-of-an-Effective-Employee-Management-System.jpg') !important;
+    background-image: url('../dist/img/employee.jpg') !important;
   }
 </style>
 
