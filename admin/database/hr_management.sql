@@ -266,7 +266,7 @@ INSERT INTO `users` (`user_id`, `employee_id`, `username`, `email`, `password`, 
 --
 DROP TABLE IF EXISTS `employee_depts_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `employee_depts_view`  AS SELECT `employees`.`employee_id` AS `employee_id`, `employees`.`first_name` AS `first_name`, `employees`.`last_name` AS `last_name`, `employees`.`email` AS `email`, `employees`.`phone` AS `phone`, `employees`.`gender` AS `gender`, `employees`.`dob` AS `dob`, `employees`.`position` AS `position`, `employees`.`join_date` AS `join_date`, `departments`.`department_name` AS `department_name` FROM (`employees` join `departments`) WHERE `departments`.`department_id` = `employees`.`department_id` ;
+CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `employee_depts_view`  AS SELECT `employees`.`employee_id` AS `employee_id`, `employees`.`first_name` AS `first_name`, `employees`.`last_name` AS `last_name`, `employees`.`email` AS `email`, `employees`.`phone` AS `phone`, `employees`.`gender` AS `gender`, `employees`.`dob` AS `dob`, `employees`.`position` AS `position`, `employees`.`join_date` AS `join_date`, `departments`.`department_name` AS `department_name` FROM (`employees` join `departments`) WHERE `departments`.`department_id` = `employees`.`department_id` ;
 
 -- --------------------------------------------------------
 
@@ -275,7 +275,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `leaves_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `leaves_view`  AS SELECT `leaves`.`leave_id` AS `leave_id`, `leaves`.`leave_type` AS `leave_type`, `leaves`.`start_date` AS `start_date`, `leaves`.`end_date` AS `end_date`, `leaves`.`reason` AS `reason`, `leaves`.`status` AS `status`, `leaves`.`approved_by` AS `approved_by`, `employees`.`first_name` AS `first_name` FROM (`leaves` join `employees`) WHERE `employees`.`employee_id` = `leaves`.`employee_id` ;
+CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `leaves_view`  AS SELECT `leaves`.`leave_id` AS `leave_id`, `leaves`.`leave_type` AS `leave_type`, `leaves`.`start_date` AS `start_date`, `leaves`.`end_date` AS `end_date`, `leaves`.`reason` AS `reason`, `leaves`.`status` AS `status`, `leaves`.`approved_by` AS `approved_by`, `employees`.`first_name` AS `first_name` FROM (`leaves` join `employees`) WHERE `employees`.`employee_id` = `leaves`.`employee_id` ;
 
 --
 -- Indexes for dumped tables

@@ -76,8 +76,8 @@ session_start();
                 <!-- sidebar menu -->
                 <ul class="sidebar-menu" data-widget="tree">
 
-                    <li><a href="admin/"><i class="fa fa-angle-right"></i>Admin Login</a></li>
-                    <li><a href="employees/"><i class="fa fa-angle-right"></i>Employee Login</a></li>
+                    <li><a href="admin/"><i class="icon-home"></i> Admin Login</a></li>
+                    <li><a href="employees/"><i class="icon-note"></i> Employee Login</a></li>
 
 
                 </ul>
