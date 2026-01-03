@@ -8,11 +8,13 @@ if(!isset($_SESSION['email'])){
 
 // INSERT PAYROLL
 if(isset($_POST['submit'])){
+  
   $employee_id   = $_POST['employee_id'];
   $month         = $_POST['month'];
   $year          = $_POST['year'];
   $basic_salary  = $_POST['basic_salary'];
   $deducation    = $_POST['deducation'];
+  $allowance    = $_POST['allowance'];
 
   $net_salary = $basic_salary - $deducation;
 
@@ -97,6 +99,11 @@ if(isset($_POST['submit'])){
           <div class="form-group has-black">
             <label>Deduction</label>
             <input type="number" name="deducation" value="0" class="form-control">
+          </div>
+
+          <div class="form-group has-black">
+            <label>Allowance</label>
+            <input type="number" name="allowance" value="0" class="form-control">
           </div>
 
           <div class="form-group has-black">

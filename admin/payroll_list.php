@@ -67,6 +67,8 @@ th, td{
                 <th>Month</th>
                 <th>Year</th>
                 <th>Basic Salary</th>
+                <th>Tax</th>
+                <th>Allowance</th>
                 <th>Deduction</th>
                 <th>Net Salary</th>
                 <th>Generated At</th>
@@ -74,8 +76,13 @@ th, td{
             </thead>
 
             <?php
-              $sql_payroll = "SELECT * FROM payroll ORDER BY payroll_id";
-              $payrollData = $conn->query($sql_payroll);
+            $rawData1 = $conn->query("SELECT * FROM deduction WHERE deduction.employee_id = '$employee_id'");
+            // $row1 = $rawData1->fetch_object();
+            //   $sql_payroll = "SELECT * FROM payroll ORDER BY payroll_id";
+            //   $payrollData = $conn->query($sql_payroll);
+
+              // $sql_deduction = "INSERT ";
+              // $payrollData = $conn->query($sql_payroll)
             ?>
 
             <tbody>
@@ -87,7 +94,9 @@ th, td{
                   <td><?= $row['month']; ?></td>
                   <td><?= $row['year']; ?></td>
                   <td><?= $row['basic_salary']; ?></td>
+                  <td><?= $tax = $row['basic_salary']*(5/100) ?></td>
                   <td><?= $row['deducation']; ?></td>
+                  <td><?= $row['allowance']; ?></td>
                   <td><strong><?= $row['net_salary']; ?></strong></td>
                   <td><?= date('d M Y', strtotime($row['generated_at'])); ?></td>
                 </tr>
