@@ -90,7 +90,7 @@ if(!isset($_SESSION['email'])){
                 <th scope="col">Gender</th>
                 <th scope="col">Date of Birth</th>
                 <th scope="col">Department</th>
-                <th scope="col">position</th>
+                <th scope="col">Designation</th>
                 <th scope="col">Join Date</th>
                 
                

@@ -38,12 +38,13 @@ if (!isset($_SESSION['email'])) {
                 <th>Basic Salary</th>
                 <th>Net Salary</th>
                 <th>Generated At</th>
+                <th>Payment</th>
               </tr>
             </thead>
 
             <?php
-            $payrollSQL = "
-                SELECT 
+            $payrollSQL = 
+                "SELECT 
                     e.employee_id,
                     e.first_name,
                     e.last_name,
@@ -55,9 +56,9 @@ if (!isset($_SESSION['email'])) {
                 INNER JOIN employees e ON a.employee_id = e.employee_id
                 WHERE a.date BETWEEN '2025-12-01' AND '2025-12-31'
                   AND a.check_in <= '08:00:00'
-                  AND a.check_out >= '17:00:00'
-                GROUP BY e.employee_id
-            ";
+                  AND a.check_out >= '05:00:00'
+                GROUP BY e.employee_id"
+            ;
 
             $payrollData = $conn->query($payrollSQL);
             ?>
@@ -72,6 +73,7 @@ if (!isset($_SESSION['email'])) {
                     <td><?= number_format($row['salary'], 2); ?></td>
                     <td><strong><?= number_format($row['net_salary'], 2); ?></strong></td>
                     <td><?= date('d M Y'); ?></td>
+                    <td class="btn btn-outline-success">CONFIRM</td>
                   </tr>
                 <?php } ?>
               <?php } else { ?>
