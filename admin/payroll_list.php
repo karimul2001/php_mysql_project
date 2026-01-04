@@ -2,41 +2,11 @@
 include_once("includes/db_config.php");
 session_start();
 
-if(!isset($_SESSION['email'])){
-  header("Location: index.php");
+if (!isset($_SESSION['email'])) {
+    header("Location: index.php");
+    exit;
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Employee & Payroll Information</title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<link rel="stylesheet" href="dist/bootstrap/css/bootstrap.min.css">
-<link rel="icon" type="image/png" sizes="16x16" href="dist/img/favicon-16x16.png">
-<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-<link rel="stylesheet" href="dist/css/style.css">
-<link rel="stylesheet" href="dist/css/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
-
-<style>
-table, th, td{
-  border: 2px solid black;
-  border-collapse: collapse;
-  height: 50px;
-  width: 2000px;
-}
-th, td{
-  text-align: center;
-}
-</style>
-</head>
-
-<body class="skin-blue sidebar-mini">
-<div class="wrapper boxed-wrapper">
 
 <?php include_once("includes/header.php"); ?>
 <?php include_once("includes/leftbar.php"); ?>
@@ -55,58 +25,62 @@ th, td{
   <div class="content">
     <div class="card">
       <div class="card-body">
-        <!-- ================= PAYROLL TABLE ================= -->
+
         <h4 class="text-dark">Payroll Data Record</h4>
 
         <div class="table-responsive">
-          <table>
+          <table class="table table-bordered">
             <thead>
               <tr>
-                <th>Payroll ID</th>
-                <th>Employee ID</th>
-                <th>Month</th>
-                <th>Year</th>
+                <th>Employee Name</th>
+                <th>Email</th>
+                <th>Attended Days</th>
                 <th>Basic Salary</th>
-                <th>Tax</th>
-                <th>Allowance</th>
-                <th>Deduction</th>
                 <th>Net Salary</th>
                 <th>Generated At</th>
               </tr>
             </thead>
 
             <?php
-            $rawData1 = $conn->query("SELECT * FROM deduction WHERE deduction.employee_id = '$employee_id'");
-            // $row1 = $rawData1->fetch_object();
-            //   $sql_payroll = "SELECT * FROM payroll ORDER BY payroll_id";
-            //   $payrollData = $conn->query($sql_payroll);
+            $payrollSQL = "
+                SELECT 
+                    e.employee_id,
+                    e.first_name,
+                    e.last_name,
+                    e.email,
+                    e.salary,
+                    COUNT(a.attendance_id) AS attended_days,
+                    ((e.salary / 26) * COUNT(a.attendance_id)) AS net_salary
+                FROM attendance a
+                INNER JOIN employees e ON a.employee_id = e.employee_id
+                WHERE a.date BETWEEN '2025-12-01' AND '2025-12-31'
+                  AND a.check_in <= '08:00:00'
+                  AND a.check_out >= '17:00:00'
+                GROUP BY e.employee_id
+            ";
 
-              // $sql_deduction = "INSERT ";
-              // $payrollData = $conn->query($sql_payroll)
+            $payrollData = $conn->query($payrollSQL);
             ?>
 
             <tbody>
-              <?php if($payrollData->num_rows > 0){ ?>
-                <?php while($row = $payrollData->fetch_assoc()){ ?>
-                <tr>
-                  <td><?= $row['payroll_id']; ?></td>
-                  <td><?= $row['employee_id']; ?></td>
-                  <td><?= $row['month']; ?></td>
-                  <td><?= $row['year']; ?></td>
-                  <td><?= $row['basic_salary']; ?></td>
-                  <td><?= $tax = $row['basic_salary']*(5/100) ?></td>
-                  <td><?= $row['deducation']; ?></td>
-                  <td><?= $row['allowance']; ?></td>
-                  <td><strong><?= $row['net_salary']; ?></strong></td>
-                  <td><?= date('d M Y', strtotime($row['generated_at'])); ?></td>
-                </tr>
+              <?php if ($payrollData && $payrollData->num_rows > 0) { ?>
+                <?php while ($row = $payrollData->fetch_assoc()) { ?>
+                  <tr>
+                    <td><?= $row['first_name'] . ' ' . $row['last_name']; ?></td>
+                    <td><?= $row['email']; ?></td>
+                    <td><?= $row['attended_days']; ?></td>
+                    <td><?= number_format($row['salary'], 2); ?></td>
+                    <td><strong><?= number_format($row['net_salary'], 2); ?></strong></td>
+                    <td><?= date('d M Y'); ?></td>
+                  </tr>
                 <?php } ?>
               <?php } else { ?>
                 <tr>
-                  <td colspan="8" class="text-center">No Payroll Found</td>
+                  <td colspan="6" class="text-center">No Payroll Found</td>
                 </tr>
               <?php } ?>
             </tbody>
+
           </table>
         </div>
 
@@ -118,17 +92,4 @@ th, td{
   </div>
 </div>
 
-<footer class="main-footer">
-  <div class="pull-right hidden-xs">Version 1.0</div>
-  Copyright © 2018 Yourdomain.
-</footer>
-
-</div>
-
-<script src="dist/js/jquery.min.js"></script>
-<script src="dist/bootstrap/js/bootstrap.min.js"></script>
-<script src="dist/js/bizadmin.js"></script>
-<script src="dist/js/demo.js"></script>
-
-</body>
-</html>
+<?php include_once("includes/footer.php"); ?>
